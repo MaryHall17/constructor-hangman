@@ -1,0 +1,26 @@
+{
+  "name": "constructor-hangman",
+  "version": "1.0.0",
+  "description": "Hangman built with constructors",
+  "main": "app.js",
+  "scripts": {
+    "test": "hello world"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaryHall17/constructor-hangman.git"
+  },
+  "keywords": [
+    "Constructor",
+    "hangman"
+  ],
+  "author": "Mary Hall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaryHall17/constructor-hangman/issues"
+  },
+  "homepage": "https://github.com/MaryHall17/constructor-hangman#readme",
+  "dependencies": {
+    "inquirer": "^5.0.0"
+  }
+}
