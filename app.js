@@ -10,7 +10,25 @@ function Hangman (word, letter) {
 		var number = Math.floor((Math.random() * wordArray.length));
 		// console.log(wordArray[number]);
 		this.word = wordArray[number];
-		console.log(this.word);
+		word = this.word
+		// console.log(this.word);
+		// console.log(word);
+		Hangman.wordBlank (word);
 		}
+	
+	Hangman.wordBlank = function (word) {
+
 		
-	Hangman.pickWord();
+		var transformWord = word;
+		for (i = 0; i < word.length; i++) {
+			transformWord = transformWord.replace(transformWord.charAt(i), "_");
+
+			this.letter = word.charAt(i);
+			
+		}
+			console.log(transformWord);
+		
+	}
+
+	Hangman.pickWord()
+	// Hangman.wordBlank(word);
