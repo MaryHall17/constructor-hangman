@@ -1,19 +1,24 @@
 var inquirer = require("inquirer");
 var wordArray = ["Chrom", "Sumia", "Robin", "Lucina", "Henry", "Nowi"];
+// var guesses = 9;
 
-function Hangman (word, letter) {
+function Hangman (word, guesses, letter) {
+	
 	this.word = word;
 	this.letter = letter;
+	this.guesses = guesses;
+	console.log(this.guesses);
+	console.log(this.word);
 
 }
 	Hangman.pickWord = function() {
+		
 		var number = Math.floor((Math.random() * wordArray.length));
-		// console.log(wordArray[number]);
 		this.word = wordArray[number];
+		//rename to a global var to pass to a function to replace the word with blanks
 		word = this.word
-		// console.log(this.word);
-		// console.log(word);
 		Hangman.wordBlank (word);
+		
 		}
 	
 	Hangman.wordBlank = function (word) {
@@ -27,8 +32,14 @@ function Hangman (word, letter) {
 			
 		}
 			console.log(transformWord);
+			
 		
 	}
 
-	Hangman.pickWord()
+	Hangman.guessLetter = function() {
+
+	}
+
+	Hangman.pickWord();
+	Hangman(word, 9);
 	// Hangman.wordBlank(word);
