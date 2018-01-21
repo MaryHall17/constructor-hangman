@@ -7,12 +7,42 @@ console.log(chosenWord);
 console.log(word.displayWord);
 var displayWord = word.displayWord;
 console.log(displayWord);
+var guesses = 9;
 
 function Letter(wordBlanks, revealWord) {
-	// this.wordBlanks = wordBlanks;
+	this.wordBlanks = wordBlanks;
 
-	this.revealWord = function () {
+	this.displayBlanks = function () {
 		console.log(this.wordBlanks);
+	},
+	this.revealWord = function () {
+		console.log(chosenWord);
+		var letters = [];
+		
+		for (i = 0; i < chosenWord.length; i++) {
+			// console.log(chosenWord.charAt(i));
+			letters.push(chosenWord[i]);
+			
+
+
+			// console.log(letters);
+			// if (user.letter === chosenWord.charAt(i) && guesses < 0) {
+			// 	var flipLetter = replace(displayWord.charAt(i), user.letter);
+			// 	console.log(flipLetter);
+			// 	console.log("That's correct! Guess another letter.");
+			// 	return true
+			// } 
+			// guesses --;
+			// console.log("Wrong. Guess again. You have " + guesses + " guesses left.");
+			// return false
+		}
+			console.log(letters);
+			module.exports = {
+				letters: letters
+			}
+
+		
+		
 	}
 
 		
@@ -21,4 +51,5 @@ function Letter(wordBlanks, revealWord) {
 
 // chosenWord.displayBlanks();
 var blankWord = new Letter(displayWord);
+blankWord.displayBlanks();
 blankWord.revealWord();

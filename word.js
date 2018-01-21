@@ -8,7 +8,7 @@ function Word(word, hangmanWord) {
 		var blankOutWord = this.word;
 		for (i = 0; i < this.word.length; i++) {
 			blankOutWord = blankOutWord.replace(blankOutWord.charAt(i), "_");
-			console.log(this.word.charAt(i));
+			// console.log(this.word.charAt(i));
 		}
 
 		console.log(blankOutWord);
