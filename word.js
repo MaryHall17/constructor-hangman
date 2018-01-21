@@ -2,7 +2,7 @@ function Word(word, hangmanWord) {
 	this.word = word;
 	// console.log(this.word);
 	console.log(this.word.length);
-	this.randomizeWord = function() {
+	this.hangmanWord = function() {
 		var number = Math.floor((Math.random() * this.word.length));
 		this.word = this.word[number];
 		console.log(this.word);
@@ -20,6 +20,6 @@ function Word(word, hangmanWord) {
 
 var wordArray = new Word(["Chrom", "Lucina", "Robin", "Tiki", "Nowi", "Lissa", "Frederick", "Stahl"]);
 
-wordArray.randomizeWord();
+wordArray.hangmanWord();
 // word.transformWord();
 // console.log(word);
