@@ -31,7 +31,7 @@ function Hangman (word, guesses, letter) {
 			this.letter = word.charAt(i);
 			//make letter a global var to pass into the guess function
 			letter = this.letter;
-			console.log(this.letter);
+			console.log(letter);
 			
 		}
 			console.log(transformWord);
@@ -40,28 +40,42 @@ function Hangman (word, guesses, letter) {
 		
 	}
 
-	// var guess = 9;
+	var guesses = 9;
 
-	// Hangman.guessLetter = function() {
+	Hangman.guessLetter = function() {
 
-	// 	if (guess > 0) {
+		if (guesses > 0) {
 
-	// 		inquirer.prompt([
-	// 			{
-	// 				name: "letter",
-	// 				message: "Guess a letter."
-	// 			}
+			inquirer.prompt([
+				{
+					name: "guess",
+					message: "Guess a letter."
+				}
 					
-	// 			]).then(function() {
-	// 				for (i = 0; i < word.length; i++) {
-	// 					if letter === word[i]
-	// 				}
-	// 			})
-	// 		}
-	// 	}
+				]).then(function(inquirerResponse) {
+					for (i = 0; i < word.length; i++) {
+						console.log(word.charAt(i));
+						console.log(word);
+						if (word.charAt(i) === inquirerResponse.guess) {
+							var guessedWord = transformWord.replace(transformWord.charAt(i), inquirerResponse.guess);
+							console.log("You are correct!");
+							console.log(guessedWord);
+							return true
+						}
+							guesses--;
+							console.log("Sorry, guess again");
+							return false
 
-	// }
+					}
+				Hangman.guessLetter();
+				});
+			}
+
+		}
+
+	// };
 
 	Hangman.pickWord();
 	Hangman(word);
+	Hangman.guessLetter();
 	// Hangman.wordBlank(word);
