@@ -1,12 +1,17 @@
-function Word(word, randomizeWord, transformWord) {
+function Word(word, hangmanWord) {
 	this.word = word;
 	// console.log(this.word);
 	console.log(this.word.length);
 	this.randomizeWord = function() {
 		var number = Math.floor((Math.random() * this.word.length));
 		this.word = this.word[number];
-		word = this.word;
-		console.log(word);
+		console.log(this.word);
+		var blankOutWord = this.word;
+		for (i = 0; i < this.word.length; i++) {
+			blankOutWord = blankOutWord.replace(blankOutWord.charAt(i), "_");
+		}
+
+		console.log(blankOutWord);
 		
 	}
 
@@ -16,3 +21,5 @@ function Word(word, randomizeWord, transformWord) {
 var wordArray = new Word(["Chrom", "Lucina", "Robin", "Tiki", "Nowi", "Lissa", "Frederick", "Stahl"]);
 
 wordArray.randomizeWord();
+// word.transformWord();
+// console.log(word);
