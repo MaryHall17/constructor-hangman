@@ -35,13 +35,13 @@ function guessLetter () {
 						// }	
 					// }	
 				
-				} 
-			} else if (guesses > 0 && inquirerResponse.guess !== correctLetters[i]) {
-				console.log("Sorry, guess again!");
-				guesses--;
-			} else {
-				console.log("Sorry, you lost.");
-			}
+				} else if (inquirerResponse.guess !== correctLetters[i]) {
+					console.log("Sorry, guess again");
+					guesses--;
+				} else {
+					console.log("Sorry, you lost.")
+				}
+			} 
 			// console.log(revealWord);
 			console.log(displayWord);
 			console.log(correctLetters);
