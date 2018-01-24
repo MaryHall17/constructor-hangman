@@ -1,20 +1,20 @@
 var word = require("./word.js");
 
-console.log(word.chosenWord);
+// console.log(word.chosenWord);
 
 var chosenWord = word.chosenWord;
-console.log(chosenWord);
-console.log(word.displayWord);
+// console.log(chosenWord);
+// console.log(word.displayWord);
 var displayWord = word.displayWord;
-console.log(displayWord);
-var guesses = 9;
+// console.log(displayWord);
+
 
 function Letter(wordBlanks, revealWord) {
 	this.wordBlanks = wordBlanks;
 
-	this.displayBlanks = function () {
-		console.log(this.wordBlanks);
-	},
+	// this.displayBlanks = function () {
+	// 	console.log(this.wordBlanks);
+	// },
 	this.revealWord = function () {
 		console.log(chosenWord);
 		var letters = [];
@@ -26,7 +26,7 @@ function Letter(wordBlanks, revealWord) {
 
 
 			// console.log(letters);
-			// if (user.letter === chosenWord.charAt(i) && guesses < 0) {
+			// if (user.letter === chosenWord.charAt(i) && guesses > 0) {
 			// 	var flipLetter = replace(displayWord.charAt(i), user.letter);
 			// 	console.log(flipLetter);
 			// 	console.log("That's correct! Guess another letter.");
@@ -38,7 +38,9 @@ function Letter(wordBlanks, revealWord) {
 		}
 			console.log(letters);
 			module.exports = {
-				letters: letters
+				letters: letters,
+				guessFunction: this.revealWord
+
 			}
 
 		
@@ -48,8 +50,13 @@ function Letter(wordBlanks, revealWord) {
 		
 }
 
+Letter.prototype.displayBlanks = function () {
+	console.log(this.wordBlanks);
+};
+
 
 // chosenWord.displayBlanks();
 var blankWord = new Letter(displayWord);
 blankWord.displayBlanks();
+// blankWord.displayBlanks();
 blankWord.revealWord();

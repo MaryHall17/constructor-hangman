@@ -4,14 +4,14 @@ function Word(word, hangmanWord) {
 	this.hangmanWord = function() {
 		var number = Math.floor((Math.random() * this.word.length));
 		this.word = this.word[number];
-		console.log(this.word);
+		// console.log(this.word);
 		var blankOutWord = this.word;
 		for (i = 0; i < this.word.length; i++) {
 			blankOutWord = blankOutWord.replace(blankOutWord.charAt(i), "_");
 			// console.log(this.word.charAt(i));
 		}
 
-		console.log(blankOutWord);
+		// console.log(blankOutWord);
 		module.exports = {
 			chosenWord: this.word,
 			displayWord: blankOutWord
