@@ -49,7 +49,6 @@ function guessLetter () {
 
 			
 			console.log(displayWord);
-			// console.log(correctLetters);
 			guessedLetters.push(inquirerResponse.guess);
 			console.log("Letters guessed: " + guessedLetters);
 			console.log(guesses);
