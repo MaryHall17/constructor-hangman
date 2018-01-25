@@ -14,7 +14,8 @@ function Word(word, hangmanWord) {
 		// console.log(blankOutWord);
 		module.exports = {
 			chosenWord: this.word,
-			displayWord: blankOutWord
+			displayWord: blankOutWord,
+			wordArray: word
 		}
 		
 	}

@@ -1,11 +1,18 @@
 var letter = require("./letter.js");
 var word = require("./word.js");
 var inquirer = require("inquirer");
-var correctLetters = letter.letters;
-// var guessesLeft = letter.guessesLeft;
-var guessFunction = letter.guessFunction;
+var correctLetters = letter.first.letters;
+var incorrectLetters = letter.second.incorrectLetters;
+console.log(correctLetters);
+console.log(incorrectLetters);
+var guessFunction = letter.first.guessFunction;
 var chosenWord = word.chosenWord;
 var displayWord = word.displayWord;
+
+// console.log(letter.method);
+// console.log(guessFunction);
+// console.log(letters);
+// console.log(incorrectLetters);
 // var revealWord = letter.letters;
  
 
@@ -25,30 +32,35 @@ function guessLetter () {
 			for (i = 0; i < correctLetters.length; i++) {
 				if (inquirerResponse.guess === correctLetters[i]) {
 					console.log(true);
-					// var revealWord = displayWord.replace(displayWord[i], correctLetters[i]);
-					// for (i = 0; i < displayWord.length; i++) {
-						// if (correctLetters[i] !== inquirerResponse.guess) {
-						displayWord = displayWord.replace(displayWord[i], inquirerResponse.guess);
-						// console.log("Something happened");
-
-
-						// }	
-					// }	
 				
-				} else if (inquirerResponse.guess !== correctLetters[i]) {
-					console.log("Sorry, guess again");
+					displayWord = displayWord.replace(displayWord[i], inquirerResponse.guess);
+							
+				
+				} 
+
+			}
+
+			for (i = 0; i < incorrectLetters.length; i++) {
+				if (inquirerResponse.guess === incorrectLetters[i]) {
 					guesses--;
-				} else {
-					console.log("Sorry, you lost.")
+					console.log("Sorry, guess again.");
 				}
-			} 
-			// console.log(revealWord);
+			}
+
+
+
+			
 			console.log(displayWord);
 			console.log(correctLetters);
 			guessedLetters.push(inquirerResponse.guess);
 			console.log("Letters guessed: " + guessedLetters);
+			console.log(guesses);
 			guessLetter();
 		})
+	} else if (displayWord === chosenWord) {
+		console.log("Congrats! You won.");
+	} else {
+		console.log("Sorry, you lost.");
 	}
 }
 
