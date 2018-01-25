@@ -3,20 +3,14 @@ var word = require("./word.js");
 var inquirer = require("inquirer");
 var correctLetters = letter.first.letters;
 var incorrectLetters = letter.second.incorrectLetters;
-console.log(correctLetters);
-console.log(incorrectLetters);
 var guessFunction = letter.first.guessFunction;
 var chosenWord = word.chosenWord;
 var displayWord = word.displayWord;
 
-// console.log(letter.method);
-// console.log(guessFunction);
-// console.log(letters);
-// console.log(incorrectLetters);
-// var revealWord = letter.letters;
+
  
 
-//For loop within a for loop for letter array, then blankOutWord. If user input equals, letter in letter array, replace blankOutWord[i] with letter[i]
+
 var guesses = 9;
 var guessedLetters = [];
 
@@ -33,7 +27,11 @@ function guessLetter () {
 				if (inquirerResponse.guess === correctLetters[i]) {
 					console.log(true);
 				
+					
+					
 					displayWord = displayWord.replace(displayWord[i], inquirerResponse.guess);
+					
+					
 							
 				
 				} 
@@ -51,7 +49,7 @@ function guessLetter () {
 
 			
 			console.log(displayWord);
-			console.log(correctLetters);
+			// console.log(correctLetters);
 			guessedLetters.push(inquirerResponse.guess);
 			console.log("Letters guessed: " + guessedLetters);
 			console.log(guesses);
